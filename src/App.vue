@@ -59,8 +59,7 @@
   </div>
 </template>
 <style lang="scss" module>
-@import "@/assets/styles/vars.scss";
-@import "@/assets/styles/mixins.scss";
+@import "@/assets/styles/style.scss";
 .conteiner {
   min-height: 100vh;
   background: linear-gradient(104.11deg, $C900 14.52%, $C400 87.26%);
