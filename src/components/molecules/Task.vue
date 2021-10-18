@@ -1,29 +1,26 @@
 <template>
   <div>
-    <label :class="$style.task">
+    <label :class="$style.task" v-for="task in tasks" :key="task.text">
       <Checkbox />
-      <div :class="$style.text">Task1</div>
-      <DeleteTask />
-    </label>
-    <label :class="$style.task">
-      <Checkbox />
-      <div :class="$style.text">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae ex
-      </div>
-      <DeleteTask />
-    </label>
-    <label :class="$style.task">
-      <Checkbox />
-      <div :class="$style.text">Task1</div>
+      <div :class="$style.text">{{ task.text }}</div>
       <DeleteTask />
     </label>
   </div>
 </template>
 
 <script>
-import Checkbox from "../atoms/Checkbox.vue";
-import DeleteTask from "../atoms/DeleteTask.vue";
+import Checkbox from "@/components/atoms/Checkbox.vue";
+import DeleteTask from "@/components/atoms/DeleteTask.vue";
 export default {
+  data() {
+    return {
+      tasks: [
+        { text: "Task1" },
+        { text: "loremdd shgfdgdgfsdjzgdfjz ddddddddddd" },
+        { text: "Task3" },
+      ],
+    };
+  },
   components: {
     Checkbox,
     DeleteTask,

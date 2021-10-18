@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import Menu from "../molecules/Menu.vue";
+import Menu from "@/components/molecules/Menu.vue";
 export default {
   components: {
     Menu,

@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import Task from "../molecules/Task.vue";
+import Task from "@/components/molecules/Task.vue";
 export default {
   components: {
     Task,

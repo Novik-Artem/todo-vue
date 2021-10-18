@@ -1,25 +1,22 @@
 <template>
   <form :class="$style.menu">
-    <label :class="$style.label">
-      <RadioButton />
-      <span :class="$style.item">All</span>
-    </label>
-    <label :class="$style.label">
-      <RadioButton />
-      <span :class="$style.item">Active</span>
-    </label>
-    <label :class="$style.label">
-      <RadioButton />
-      <span :class="$style.item">Completed</span>
+    <label :class="$style.label" v-for="item in items" :key="item.text">
+      <RadioBtn />
+      <span :class="$style.item">{{ item.text }}</span>
     </label>
   </form>
 </template>
 
 <script>
-import RadioButton from "../atoms/RadioButton.vue";
+import RadioBtn from "@/components/atoms/RadioBtn.vue";
 export default {
+  data() {
+    return {
+      items: [{ text: "All" }, { text: "Active" }, { text: "Completed" }],
+    };
+  },
   components: {
-    RadioButton,
+    RadioBtn,
   },
 };
 </script>
