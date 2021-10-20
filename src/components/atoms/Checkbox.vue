@@ -1,9 +1,17 @@
 <template>
   <div>
-    <input :class="$style.checkbox" type="checkbox" />
+    <input :class="$style.checkbox" type="checkbox" :checked="taskChecked" />
     <span :class="$style.fake"></span>
   </div>
 </template>
+
+<script>
+export default {
+  props: {
+    taskChecked: Boolean,
+  },
+};
+</script>
 
 <style style lang="scss" module>
 @import "@/assets/styles/style.scss";

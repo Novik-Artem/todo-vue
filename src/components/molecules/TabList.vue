@@ -1,22 +1,21 @@
 <template>
   <form :class="$style.menu">
-    <label :class="$style.label" v-for="item in items" :key="item.text">
-      <RadioBtn />
-      <span :class="$style.item">{{ item.text }}</span>
+    <label :class="$style.label">
+      <Tab :isChosen="isChosen" />
+      <span :class="$style.item">{{ tabText }}</span>
     </label>
   </form>
 </template>
 
 <script>
-import RadioBtn from "@/components/atoms/RadioBtn.vue";
+import Tab from "@/components/atoms/Tab.vue";
 export default {
-  data() {
-    return {
-      items: [{ text: "All" }, { text: "Active" }, { text: "Completed" }],
-    };
+  props: {
+    tabText: String,
+    isChosen: Boolean,
   },
   components: {
-    RadioBtn,
+    Tab,
   },
 };
 </script>

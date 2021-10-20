@@ -2,7 +2,7 @@
   <div :class="$style.conteiner">
     <div :class="$style.content">
       <Header />
-      <Tasks />
+      <Content />
       <Footer />
     </div>
   </div>
@@ -10,12 +10,12 @@
 
 <script>
 import Header from "./components/atoms/Header.vue";
-import Tasks from "./components/organisms/Tasks.vue";
+import Content from "./components/organisms/Content.vue";
 import Footer from "./components/organisms/Footer.vue";
 export default {
   components: {
     Header,
-    Tasks,
+    Content,
     Footer,
   },
 };

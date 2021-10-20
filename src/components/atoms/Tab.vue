@@ -1,9 +1,17 @@
 <template>
   <div>
-    <input :class="$style.radio" type="radio" name="name" value="all" />
+    <input :class="$style.radio" type="radio" :checked="isChosen" />
     <span :class="$style.fake"></span>
   </div>
 </template>
+
+<script>
+export default {
+  props: {
+    isChosen: Boolean,
+  },
+};
+</script>
 
 <style lang="scss" module>
 @import "@/assets/styles/style.scss";

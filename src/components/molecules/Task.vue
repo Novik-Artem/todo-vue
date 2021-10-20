@@ -1,8 +1,8 @@
 <template>
   <div>
-    <label :class="$style.task" v-for="task in tasks" :key="task.text">
-      <Checkbox />
-      <div :class="$style.text">{{ task.text }}</div>
+    <label :class="$style.task">
+      <Checkbox :taskChecked="taskChecked" />
+      <div :class="$style.text">{{ taskText }}</div>
       <DeleteTask />
     </label>
   </div>
@@ -12,14 +12,9 @@
 import Checkbox from "@/components/atoms/Checkbox.vue";
 import DeleteTask from "@/components/atoms/DeleteTask.vue";
 export default {
-  data() {
-    return {
-      tasks: [
-        { text: "Task1" },
-        { text: "loremdd shgfdgdgfsdjzgdfjz ddddddddddd" },
-        { text: "Task3" },
-      ],
-    };
+  props: {
+    taskText: String,
+    taskChecked: Boolean,
   },
   components: {
     Checkbox,
@@ -42,7 +37,6 @@ export default {
     padding: 0.69rem 0;
     color: $C800;
     flex: 1 1 auto;
-    max-width: 25rem;
   }
 }
 </style>
