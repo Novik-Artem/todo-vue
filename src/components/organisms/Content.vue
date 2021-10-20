@@ -7,15 +7,6 @@
 <script>
 import TasksList from "@/components/organisms/TasksList.vue";
 export default {
-  data() {
-    return {
-      tasks: [
-        { text: "Task1" },
-        { text: "loremdd shgfdgdgfsdjzgdfjz ddddddddddd" },
-        { text: "Task3" },
-      ],
-    };
-  },
   components: {
     TasksList,
   },

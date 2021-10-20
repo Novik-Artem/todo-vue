@@ -1,39 +1,13 @@
 <template>
   <div :class="$style.footer">
     <div :class="$style.counter">1/3 left</div>
-    <TabList
-      v-for="tab in tabs"
-      :key="tab.id"
-      :tabText="tab.text"
-      :isChosen="tab.isChosen"
-    />
+    <TabList />
   </div>
 </template>
 
 <script>
 import TabList from "@/components/molecules/TabList.vue";
 export default {
-  data() {
-    return {
-      tabs: [
-        {
-          id: 1,
-          text: "All",
-          isChosen: true,
-        },
-        {
-          id: 2,
-          text: "Active",
-          isChosen: false,
-        },
-        {
-          id: 3,
-          text: "Completed",
-          isChosen: false,
-        },
-      ],
-    };
-  },
   components: {
     TabList,
   },
