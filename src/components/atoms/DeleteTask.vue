@@ -1,8 +1,23 @@
 <template>
   <div>
-    <div :class="$style.cross"></div>
+    <div :class="$style.cross" @click="delTask"></div>
   </div>
 </template>
+
+<script>
+import { mapMutations } from "vuex";
+export default {
+  props: {
+    index: Number,
+  },
+  methods: {
+    ...mapMutations(["deleteTask"]),
+    delTask() {
+      this.deleteTask(this.index);
+    },
+  },
+};
+</script>
 
 <style style lang="scss" module>
 @import "@/assets/styles/style.scss";

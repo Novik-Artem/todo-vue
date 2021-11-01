@@ -1,38 +1,20 @@
 <template>
   <div :class="$style.menu">
     <Tab
-      v-for="tab in tabs"
+      v-for="tab in getTabs"
       :key="tab.id"
       :tabText="tab.text"
       :isChosen="tab.isChosen"
+      :tabId="tab.id"
     />
   </div>
 </template>
 
 <script>
 import Tab from "@/components/atoms/Tab.vue";
+import { mapGetters } from "vuex";
 export default {
-  data() {
-    return {
-      tabs: [
-        {
-          id: 1,
-          text: "All",
-          isChosen: true,
-        },
-        {
-          id: 2,
-          text: "Active",
-          isChosen: false,
-        },
-        {
-          id: 3,
-          text: "Completed",
-          isChosen: false,
-        },
-      ],
-    };
-  },
+  computed: mapGetters(["getTabs"]),
   components: {
     Tab,
   },
