@@ -8,12 +8,12 @@
 import { mapMutations } from "vuex";
 export default {
   props: {
-    index: Number,
+    id: String,
   },
   methods: {
     ...mapMutations(["deleteTask"]),
     delTask() {
-      this.deleteTask(this.index);
+      this.deleteTask(this.id);
     },
   },
 };

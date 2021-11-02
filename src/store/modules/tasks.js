@@ -31,9 +31,6 @@ export default {
     getActiveTasks(state) {
       return state.tasks.filter((task) => task.isChecked === false);
     },
-    getCompletedTasks(state) {
-      return state.tasks.filter((task) => task.isChecked === true);
-    },
     getTabStatus(state) {
       return state.tabStatus;
     },
@@ -42,7 +39,7 @@ export default {
         case "Active":
           return getters.getActiveTasks;
         case "Completed":
-          return getters.getCompletedTasks;
+          return state.tasks.filter((task) => task.isChecked === true);
         default:
           return getters.getAllTasks;
       }
@@ -60,10 +57,9 @@ export default {
           state.tabStatus = tab.text;
         }
       });
-      console.log(state.tabStatus);
     },
     createTask(state, text) {
-      if (text != "") {
+      if (text) {
         state.tasks.push({
           id: uuidv4(),
           text: text,
@@ -71,8 +67,8 @@ export default {
         });
       }
     },
-    deleteTask(state, index) {
-      state.tasks.splice(index, 1);
+    deleteTask(state, id) {
+      state.tasks = state.tasks.filter((task) => task.id != id);
     },
     changeTaskStatus(state, id) {
       state.tasks.map((task) => {

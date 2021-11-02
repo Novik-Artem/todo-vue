@@ -9,7 +9,7 @@
       />
       <span :class="$style.fake"></span>
       <div :class="$style.text">{{ taskText }}</div>
-      <DeleteTask :index="index" />
+      <DeleteTask :id="id" />
     </label>
   </div>
 </template>
@@ -22,7 +22,6 @@ export default {
     taskText: String,
     taskChecked: Boolean,
     id: String,
-    index: Number,
   },
   methods: {
     ...mapMutations(["changeTaskStatus"]),

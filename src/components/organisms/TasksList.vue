@@ -1,12 +1,11 @@
 <template>
   <div v-if="getFilteredTasks.length != 0">
     <Task
-      v-for="(task, index) in getFilteredTasks"
+      v-for="task in getFilteredTasks"
       :key="task.id"
       :taskText="task.text"
       :taskChecked="task.isChecked"
       :id="task.id"
-      :index="index"
     />
   </div>
   <div v-else :class="$style.noTasks">No tasks, add the first</div>
