@@ -13,6 +13,9 @@ import Header from "@/components/atoms/Header.vue";
 import Content from "@/components/organisms/Content.vue";
 import Footer from "@/components/organisms/Footer.vue";
 export default {
+  mounted() {
+    this.$store.dispatch("checkLocalStorage");
+  },
   components: {
     Header,
     Content,

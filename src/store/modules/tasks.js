@@ -66,15 +66,25 @@ export default {
           isChecked: false,
         });
       }
+      localStorage.setItem("tasks", JSON.stringify(state.tasks));
     },
     deleteTask(state, id) {
       state.tasks = state.tasks.filter((task) => task.id != id);
+      localStorage.setItem("tasks", JSON.stringify(state.tasks));
     },
     changeTaskStatus(state, id) {
       state.tasks.map((task) => {
         if (task.id === id) task.isChecked = !task.isChecked;
       });
+      localStorage.setItem("tasks", JSON.stringify(state.tasks));
+    },
+    checkLocalStorage(state) {
+      state.tasks = JSON.parse(localStorage.getItem("tasks")) || [];
     },
   },
-  actions: {},
+  actions: {
+    checkLocalStorage(context) {
+      context.commit("checkLocalStorage");
+    },
+  },
 };
