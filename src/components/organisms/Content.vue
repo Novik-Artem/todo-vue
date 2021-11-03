@@ -1,12 +1,30 @@
 <template>
-  <div :class="$style.content">
+  <form :class="$style.content" @submit.prevent="submit">
     <TasksList />
-    <input type="text" placeholder="add new task" :class="$style.input" />
-  </div>
+    <input
+      type="text"
+      placeholder="add new task"
+      :class="$style.input"
+      v-model="text"
+    />
+  </form>
 </template>
 <script>
 import TasksList from "@/components/organisms/TasksList.vue";
+import { mapMutations } from "vuex";
 export default {
+  data() {
+    return {
+      text: "",
+    };
+  },
+  methods: {
+    ...mapMutations(["createTask"]),
+    submit() {
+      this.createTask(this.text);
+      this.text = "";
+    },
+  },
   components: {
     TasksList,
   },
@@ -20,6 +38,8 @@ export default {
   flex-direction: column;
   background-color: $white;
   padding: 1.88rem;
+  max-height: 20rem;
+  overflow: auto;
   .input {
     @include Inter;
     color: $C800;

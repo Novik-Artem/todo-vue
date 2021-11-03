@@ -1,13 +1,17 @@
 <template>
   <div :class="$style.footer">
-    <div :class="$style.counter">1/3 left</div>
+    <div :class="$style.counter">
+      {{ getActiveTasks.length }}/{{ getAllTasks.length }} left
+    </div>
     <TabList />
   </div>
 </template>
 
 <script>
 import TabList from "@/components/molecules/TabList.vue";
+import { mapGetters } from "vuex";
 export default {
+  computed: mapGetters(["getAllTasks", "getActiveTasks"]),
   components: {
     TabList,
   },
