@@ -19,10 +19,7 @@ export default {
     };
   },
   methods: {
-    mounted() {
-      this.$store.dispatch("checkLocalStorage");
-    },
-    ...mapMutations(["createTask", "checkLocalStorage"]),
+    ...mapMutations(["createTask"]),
     submit() {
       this.createTask(this.text);
       this.text = "";
