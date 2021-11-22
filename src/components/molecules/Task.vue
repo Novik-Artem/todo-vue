@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="task">
     <label :class="$style.task">
       <input
         :class="$style.checkbox"

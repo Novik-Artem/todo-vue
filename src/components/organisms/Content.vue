@@ -6,6 +6,7 @@
       placeholder="add new task"
       :class="$style.input"
       v-model="text"
+      id="input"
     />
   </form>
 </template>

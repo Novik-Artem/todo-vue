@@ -1,5 +1,5 @@
 <template>
-  <label :class="$style.label">
+  <label :class="$style.label" id="tab">
     <input
       :class="$style.radio"
       type="radio"
