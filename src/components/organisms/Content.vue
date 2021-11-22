@@ -1,11 +1,12 @@
 <template>
-  <form :class="$style.content" @submit.prevent="submit" id="form">
+  <form :class="$style.content" @submit.prevent="submit">
     <TasksList />
     <input
       type="text"
       placeholder="add new task"
       :class="$style.input"
       v-model="text"
+      id="input"
     />
   </form>
 </template>

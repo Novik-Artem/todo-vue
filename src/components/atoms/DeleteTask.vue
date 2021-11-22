@@ -1,6 +1,6 @@
 <template>
-  <div id="deleteTask">
-    <div :class="$style.cross" @click="delTask"></div>
+  <div>
+    <div :class="$style.cross" @click="delTask" id="deleteTask"></div>
   </div>
 </template>
 

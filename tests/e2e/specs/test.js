@@ -4,23 +4,30 @@ describe("test for todo-app", () => {
     cy.visit("/");
     cy.get("#app").should("be.visible");
   });
-  /*it("add new task", () => {
-    cy.get("#form").type("Task1").submit("prevent");
-    cy.get("#form").type("Task2").submit("prevent");
-    cy.wait(1000);
-  });*/
-  it("check checkbox value", () => {
-    cy.get("#task").find("span").click();
-    cy.wait(1000);
+  it("add new task", () => {
+    cy.get("#input").type("Task1").type("{enter}");
+    cy.wait(800);
+    cy.get("#input").type("Task2").type("{enter}");
+    cy.wait(800);
+    cy.get("#input").type("Task3").type("{enter}");
+    cy.wait(800);
+    cy.get("#input").type("deleteTask").type("{enter}");
+    cy.wait(800);
   });
   it("delete task", () => {
-    cy.get("#deleteTask").find("div").click();
-    cy.wait(1000);
+    cy.get("#task:last-child").find("#deleteTask").click();
+    cy.wait(800);
   });
-  it("add new task", () => {
-    cy.get("form").find("input").type("Task2").type("{enter}");
-	});
-	it("add new task", () => {
-    cy.get("form").find("input").type("Task3").type("{enter}");
+  it("check checkbox value", () => {
+    cy.get("#task:nth-child(2)").click();
+    cy.wait(800);
+  });
+  it("check footer menu", () => {
+    cy.get("#tab:nth-child(2)").click();
+    cy.wait(800);
+    cy.get("#tab:last-child").click();
+    cy.wait(800);
+    cy.get("#tab:first-child").click();
+    cy.wait(800);
   });
 });
