@@ -1,5 +1,5 @@
 <template>
-  <form :class="$style.content" @submit.prevent="submit">
+  <form :class="$style.content" @submit.prevent="submit" id="form">
     <TasksList />
     <input
       type="text"

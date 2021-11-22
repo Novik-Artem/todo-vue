@@ -1,10 +1,10 @@
 <template>
-  <div :class="$style.footer">
+  <footer :class="$style.footer">
     <div :class="$style.counter">
       {{ getActiveTasks.length }}/{{ getAllTasks.length }} left
     </div>
     <TabList />
-  </div>
+  </footer>
 </template>
 
 <script>

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="deleteTask">
     <div :class="$style.cross" @click="delTask"></div>
   </div>
 </template>

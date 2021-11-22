@@ -1,5 +1,5 @@
 <template>
-  <div :class="$style.conteiner">
+  <div :class="$style.conteiner" id="app">
     <div :class="$style.content">
       <Header />
       <Content />
